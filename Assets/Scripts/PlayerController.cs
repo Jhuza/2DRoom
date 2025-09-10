@@ -4,12 +4,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f; //variable para guardar la velocidad
-    
-    
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,9 +20,15 @@ public class PlayerController : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         //creamos un vector para direccion del movimiento
-        Vector3 direction = new Vector3(moveHorizontal, moveVertical, 0);  
+        Vector3 direction = new Vector3(moveHorizontal, moveVertical, 0);
 
         transform.Translate(direction * speed * Time.deltaTime);
+
+    }
+
+    //Función especial que se ejecuta cuando se toca a otro objeto que tiene un collider en modo trigger
+    private void OnTriggerEnter2D(Collider2D other)  
+    {
 
     }
 }
