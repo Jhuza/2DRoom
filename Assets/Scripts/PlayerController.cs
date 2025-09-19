@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Water"))
         {
             hasWater = true; 
-            Debug.Log("Has tocado el agua y no puedes ganar");
+            Debug.Log("Has tocado el agua y perdiste");
             Destroy(gameObject); 
 
         }
